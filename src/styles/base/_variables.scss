@@ -1,7 +1,8 @@
 @forward "./colors-palette";
 @use "./mixins" as mx;
 
-$fontFamily: "";
+$fontFamily: "Poppins", sans-serif;
+// $fontSize: mx.toRem(14);
 // Мінімальна ширина сторінки
 $minWidth: 320;
 // Ширина полотна (макету)
