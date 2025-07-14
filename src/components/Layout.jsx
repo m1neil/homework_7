@@ -1,11 +1,13 @@
 import { Outlet } from 'react-router'
-import Navbar from './Navbar'
+import Header from './Header'
 
 function Layout() {
 	return (
 		<>
-			<Navbar />
-			<Outlet />
+			<Header />
+			<main className="page">
+				<Outlet />
+			</main>
 		</>
 	)
 }
