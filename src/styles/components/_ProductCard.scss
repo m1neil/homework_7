@@ -1,0 +1,64 @@
+@use "@styles/base/animation" as *;
+@use "@styles/base/mixins" as *;
+
+.card-product {
+	position: relative;
+	border: toRem(1) solid #e5e5e5;
+	padding: toRem(16) toRem(12) toRem(12);
+	transition: box-shadow 0.4s;
+	opacity: 0;
+	animation: show-item 0.7s forwards ease;
+	&::before {
+		content: "";
+		position: absolute;
+		width: calc(100% + toRem(1));
+		height: calc(100% + toRem(1));
+		top: toRem(-1);
+		left: toRem(-1);
+		pointer-events: none;
+		border: toRem(1) solid transparent;
+		transition: border-color 0.4s;
+		z-index: 1;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			box-shadow: 0 0 12px 0 rgba(32, 181, 38, 0.32);
+			&::before {
+				border-color: var(--accent);
+			}
+		}
+	}
+	// .card-product__img
+	&__img {
+		aspect-ratio: 254 / 230;
+		transition: transform 0.4s;
+		will-change: transform;
+		@media (any-hover: hover) {
+			&:hover {
+				transform: rotate(3deg) scale(1.02);
+			}
+		}
+	}
+	// .card-product__title
+	&__title {
+		font-weight: 600;
+		font-size: toRem(18);
+		line-height: 1.5;
+		margin-bottom: toRem(2);
+		a {
+			color: var(--text-accent);
+			transition: color 0.3s;
+			@media (any-hover: hover) {
+				&:hover {
+					color: var(--accent);
+				}
+			}
+		}
+	}
+	// .card-product__price
+	&__price {
+		font-weight: 500;
+		line-height: 1.5;
+		color: var(--text-accent);
+	}
+}

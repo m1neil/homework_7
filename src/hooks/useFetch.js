@@ -28,8 +28,10 @@ const useFetch = (initValue = null) => {
 				const data = await response.json()
 				setData(data)
 			} catch (error) {
-				setError(error.message)
-				console.error(error.message)
+				if (error.name !== 'AbortError') {
+					setError(error.message)
+					console.error(error.message)
+				}
 			} finally {
 				setIsLoading(false)
 			}

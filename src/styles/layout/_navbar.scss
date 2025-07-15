@@ -1,0 +1,42 @@
+@use "@styles/base/mixins" as *;
+
+.navbar {
+	display: flex;
+	column-gap: toRem(12);
+	overflow-x: auto;
+	// .nav__item
+	&__item {
+		&:not(:last-child) {
+			display: flex;
+			align-items: center;
+			column-gap: toRem(12);
+			&::after {
+				content: "";
+				width: toRem(15);
+				height: toRem(12);
+				background: url("@img/icons/arrow-right.svg") 100% / contain no-repeat;
+				flex-shrink: 0;
+			}
+		}
+		a.nav__link {
+			@media (any-hover: hover) {
+				&:hover {
+					color: #018205;
+					color: #c0d820;
+				}
+			}
+		}
+	}
+	// .nav__link
+	&__link {
+		font-weight: 600;
+		line-height: 1.5;
+		color: var(--text-primary);
+		transition: color 0.3s;
+		@media (any-hover: hover) {
+			&:is(a):hover {
+				color: var(--accent);
+			}
+		}
+	}
+}

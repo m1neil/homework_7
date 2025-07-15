@@ -1,0 +1,15 @@
+@use "@styles/base/mixins" as *;
+
+.page404 {
+	// .page404__container
+	&__container {
+		padding-block: toRem(60);
+		min-height: 100svh;
+		display: flex;
+		place-items: center;
+	}
+	// .page404__text
+	&__text {
+		font-size: toRem(90);
+	}
+}

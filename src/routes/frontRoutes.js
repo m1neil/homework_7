@@ -5,16 +5,16 @@ export const frontRoutes = {
 		contacts: '/contacts',
 		shop: {
 			index: '/shop',
-			category: ':category/products',
-			product: ':id',
+			category: 'products/:category',
+			product: `products/:category/:productName/:id`,
 		},
 	},
 	navigate: {
 		shop: {
 			list: '/shop',
-			getCategoryLink: category => `/shop/${category}/products`,
-			getProductLink: (category, idProduct) =>
-				`/shop/${category}/products/${idProduct}`,
+			getCategoryLink: category => `/shop/products/${category}`,
+			getProductLink: (category, name, idProduct) =>
+				`/shop/products/${category}/${encodeURIComponent(name)}/${idProduct}`,
 		},
 	},
 }

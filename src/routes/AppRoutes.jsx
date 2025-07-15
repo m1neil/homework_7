@@ -1,10 +1,12 @@
+import RulesAndPayment from '@src//pages/RulesAndPayment'
+import Layout from '@src/components/Layout'
+import Contacts from '@src/pages/Contacts'
+import Home from '@src/pages/Home'
+import Product from '@src/pages/shop/Product'
+import ProductList from '@src/pages/shop/ProductList'
+import ShopList from '@src/pages/shop/ShopList'
 import { Route, Routes } from 'react-router'
-import Layout from '../components/Layout'
-import Category from '../pages/Category'
-import Contacts from '../pages/Contacts'
-import Home from '../pages/Home'
-import RulesAndPayment from '../pages/RulesAndPayment'
-import Shop from '../pages/Shop'
+import Page404 from '../pages/Page404'
 import { frontRoutes } from './frontRoutes'
 
 function AppRoutes() {
@@ -18,13 +20,14 @@ function AppRoutes() {
 				/>
 				<Route path={frontRoutes.pages.contacts} element={<Contacts />} />
 				<Route path={frontRoutes.pages.shop.index}>
-					<Route index element={<Shop />} />
+					<Route index element={<ShopList />} />
 					<Route
 						path={frontRoutes.pages.shop.category}
-						element={<Category />}
+						element={<ProductList />}
 					/>
-					<Route path={frontRoutes.pages.shop.product} />
+					<Route path={frontRoutes.pages.shop.product} element={<Product />} />
 				</Route>
+				<Route path="*" element={<Page404 />} />
 			</Route>
 		</Routes>
 	)

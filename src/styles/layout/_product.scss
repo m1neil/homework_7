@@ -1,0 +1,54 @@
+@use "@styles/base/mixins" as *;
+@use "@styles/base/animation" as *;
+
+.product {
+	padding-block: toRem(60);
+	// .product__container
+	&__container {
+	}
+	// .product__body
+	&__body {
+	}
+	&__nav {
+		margin-bottom: toRem(25);
+	}
+	// .product__loader
+	&__loader {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: toRem(400);
+	}
+	// .product__title
+	&__title {
+		margin-bottom: toRem(15);
+		opacity: 0;
+		transform: translateY(toRem(10));
+		.--loaded & {
+			animation: show-element 0.4s forwards ease;
+		}
+	}
+	// .product__img
+	&__img {
+		max-width: toRem(400);
+		aspect-ratio: 556 / 556;
+		margin-bottom: toRem(10);
+		opacity: 0;
+		transform: translateY(7%);
+		.--loaded & {
+			animation: show-element 0.6s forwards ease 0.2s;
+		}
+	}
+	// .product__price
+	&__price {
+		font-weight: 500;
+		font-size: toRem(24);
+		line-height: 1.5;
+		color: var(--text-accent);
+		opacity: 0;
+		transform: translateY(toRem(10));
+		.--loaded & {
+			animation: show-element 0.3s forwards ease 0.5s;
+		}
+	}
+}

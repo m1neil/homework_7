@@ -1,11 +1,11 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router'
-import { apiBackend } from '../api/apiBackend'
-import Loader from '../components/loader'
-import useFetch from '../hooks/useFetch'
-import { frontRoutes } from '../routes/frontRoutes'
+import { apiBackend } from '../../api/apiBackend'
+import Loader from '../../components/loader'
+import useFetch from '../../hooks/useFetch'
+import { frontRoutes } from '../../routes/frontRoutes'
 
-function Shop() {
+function ShopList() {
 	const { data: categories, isLoading, error, getData } = useFetch()
 
 	useEffect(() => {
@@ -20,6 +20,7 @@ function Shop() {
 				<h1 className="shop__title title">Popular Categories</h1>
 				<div className="shop__body">
 					{isLoading && <Loader />}
+					{error && <div className="error">{error}</div>}
 					{categories && (
 						<div className="shop__categories categories">
 							{categories.map(({ id, name, imageUrl }, index) => (
@@ -51,4 +52,4 @@ function Shop() {
 	)
 }
 
-export default Shop
+export default ShopList

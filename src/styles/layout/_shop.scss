@@ -12,7 +12,7 @@
 	}
 	// .shop__body
 	&__body {
-		&:has(:only-child) {
+		&:has(.loader) {
 			display: flex;
 			justify-content: center;
 			align-items: center;
