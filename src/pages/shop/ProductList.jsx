@@ -2,13 +2,13 @@ import { useEffect } from 'react'
 import { Link, useParams } from 'react-router'
 import { apiBackend } from '../../api/apiBackend'
 import Loader from '../../components/loader'
-import ProductCard from '../../components/ProductCard'
 import useFetch from '../../hooks/useFetch'
 import { frontRoutes } from '../../routes/frontRoutes'
+import ProductCard from './components/ProductCard'
 
 function ProductList() {
 	const { category } = useParams()
-	const { data: products, isLoading, error, getData } = useFetch(() => [])
+	const { data: products, isLoading, error, getData } = useFetch([])
 
 	useEffect(() => {
 		const abortController = new AbortController()
@@ -17,7 +17,7 @@ function ProductList() {
 	}, [category])
 
 	const getProductList = () => {
-		if (!products.length) return null
+		if (isLoading || error) return null
 
 		const items = products.map((product, index) => (
 			<ProductCard
@@ -32,15 +32,14 @@ function ProductList() {
 			/>
 		))
 
-		return (
-			<div
-				className={`products__list list-product ${
-					!isLoading ? '--loaded' : ''
-				}`}
-			>
-				{items}
-			</div>
-		)
+		let content
+		if (!items.length)
+			content = <div className="info">Не знайдено жодного товару!</div>
+		else {
+			content = <div className="products__list list-product">{items}</div>
+		}
+
+		return content
 	}
 
 	return (
@@ -61,9 +60,6 @@ function ProductList() {
 					<div className="products__loader">
 						<Loader />
 					</div>
-				)}
-				{!isLoading && !products.length && (
-					<div className="info">Не знайдено жодного товару!</div>
 				)}
 				{getProductList()}
 			</div>

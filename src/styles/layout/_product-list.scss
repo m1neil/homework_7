@@ -1,4 +1,5 @@
 @use "@styles/base/mixins" as *;
+@use "@styles/base/animation" as *;
 
 .products {
 	padding-block: toRem(60);
@@ -28,14 +29,12 @@
 .list-product {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	border: toRem(1) solid transparent;
+	border: toRem(1) solid #e5e5e5;
 	border-top: none;
 	border-left: none;
-	transition: border-color 0.4s;
-	&.--loaded {
-		border-color: #e5e5e5;
-		min-height: auto;
-	}
+	opacity: 0;
+	animation: show-item 0.3s forwards ease;
+	min-height: auto;
 	&:has(.loader) {
 		display: flex;
 		justify-content: center;

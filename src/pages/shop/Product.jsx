@@ -1,9 +1,9 @@
+import Loader from '@components/Loader'
+import { apiBackend } from '@src/api/apiBackend'
+import useFetch from '@src/hooks/useFetch'
+import { frontRoutes } from '@src/routes/frontRoutes'
 import { useEffect } from 'react'
 import { Link, useNavigate, useParams } from 'react-router'
-import { apiBackend } from '../../api/apiBackend'
-import Loader from '../../components/loader'
-import useFetch from '../../hooks/useFetch'
-import { frontRoutes } from '../../routes/frontRoutes'
 
 function Product() {
 	const { id, category, productName } = useParams()

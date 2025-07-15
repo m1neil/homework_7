@@ -1,0 +1,39 @@
+@use "@styles/base/mixins" as *;
+@use "@styles/base/animation" as *;
+
+.category-card {
+	// .category-card__item
+	opacity: 0;
+	animation: show-item 0.7s forwards ease;
+	// .category-card__link
+	&__link {
+		border: toRem(1) solid #e5e5e5;
+		border-radius: toRem(5);
+		padding-block: toRem(16) toRem(24);
+		padding-inline: toRem(10);
+		color: var(--text-accent);
+		transition:
+			color 0.4s,
+			border-color 0.4s,
+			box-shadow 0.4s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--accent);
+				border-color: var(--accent);
+				box-shadow: 0 0 toRem(12) 0 rgba(32, 181, 38, 0.32);
+			}
+		}
+	}
+	// .category-card__img
+	&__img {
+		aspect-ratio: 190/ 139;
+		margin-bottom: toRem(16);
+	}
+	// .category-card__title
+	&__title {
+		font-weight: 600;
+		font-size: toRem(18);
+		line-height: 1.5;
+		text-align: center;
+	}
+}
