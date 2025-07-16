@@ -1,3 +1,4 @@
+import Page404 from '@pages/Page404'
 import RulesAndPayment from '@src//pages/RulesAndPayment'
 import Layout from '@src/components/Layout'
 import Contacts from '@src/pages/Contacts'
@@ -6,7 +7,6 @@ import Product from '@src/pages/shop/Product'
 import ProductList from '@src/pages/shop/ProductList'
 import ShopList from '@src/pages/shop/ShopList'
 import { Route, Routes } from 'react-router'
-import Page404 from '../pages/Page404'
 import { frontRoutes } from './frontRoutes'
 
 function AppRoutes() {

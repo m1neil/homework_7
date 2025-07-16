@@ -1,9 +1,9 @@
+import Loader from '@components/Loader'
+import { apiBackend } from '@src/api/apiBackend'
+import useFetch from '@src/hooks/useFetch'
+import CategoryCard from '@src/pages/shop/components/CategoryCard'
+import { frontRoutes } from '@src/routes/frontRoutes'
 import { useEffect } from 'react'
-import { apiBackend } from '../../api/apiBackend'
-import Loader from '../../components/loader'
-import useFetch from '../../hooks/useFetch'
-import { frontRoutes } from '../../routes/frontRoutes'
-import CategoryCard from './components/CategoryCard'
 
 function ShopList() {
 	const { data: categories, isLoading, error, getData } = useFetch([])
