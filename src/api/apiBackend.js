@@ -1,5 +1,4 @@
-// const BASE_URL = 'http://localhost:5000/api/'
-const BASE_URL = 'https://startling-scone-bb8cf3.netlify.app/'
+const BASE_URL = 'https://ericalex-simple-backend.onrender.com/api/'
 
 export const apiBackend = {
 	shopList: `${BASE_URL}categories`,

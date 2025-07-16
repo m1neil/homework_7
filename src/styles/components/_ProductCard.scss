@@ -6,8 +6,10 @@
 	border: toRem(1) solid #e5e5e5;
 	padding: toRem(16) toRem(12) toRem(12);
 	transition: box-shadow 0.4s;
-	opacity: 0;
 	animation: show-item 0.7s forwards ease;
+	opacity: 0;
+	min-width: 0;
+
 	&::before {
 		content: "";
 		position: absolute;
@@ -30,6 +32,7 @@
 	}
 	// .card-product__img
 	&__img {
+		display: block;
 		aspect-ratio: 254 / 230;
 		transition: transform 0.4s;
 		will-change: transform;
@@ -45,9 +48,15 @@
 		font-size: toRem(18);
 		line-height: 1.5;
 		margin-bottom: toRem(2);
+		display: flex;
+		justify-content: flex-start;
 		a {
+			display: block;
 			color: var(--text-accent);
 			transition: color 0.3s;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
 			@media (any-hover: hover) {
 				&:hover {
 					color: var(--accent);

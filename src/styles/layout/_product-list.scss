@@ -27,14 +27,19 @@
 }
 
 .list-product {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
 	border: toRem(1) solid #e5e5e5;
 	border-top: none;
 	border-left: none;
 	opacity: 0;
 	animation: show-item 0.3s forwards ease;
 	min-height: auto;
+	@media (width > toEm(500)) {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@media (width > toEm(991.98)) {
+		grid-template-columns: repeat(4, 1fr);
+	}
 	&:has(.loader) {
 		display: flex;
 		justify-content: center;

@@ -1,0 +1,29 @@
+@use "@styles/base/mixins" as *;
+
+.contacts {
+	padding-block: toRem(60);
+	// .contacts__container
+	&__container {
+	}
+	// .contacts__title
+	&__title {
+		margin-bottom: toRem(20);
+	}
+	// .contacts__list
+	&__list {
+		margin-bottom: toRem(7);
+	}
+	// .contacts__text
+	&__text {
+		font-weight: 600;
+		font-size: toRem(18);
+	}
+}
+.list-contacts {
+	list-style: none;
+	// .list-contacts__item
+	&__item {
+		color: var(--text-accent);
+		line-height: 1.5;
+	}
+}

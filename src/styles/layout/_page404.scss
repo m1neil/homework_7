@@ -4,12 +4,15 @@
 	// .page404__container
 	&__container {
 		padding-block: toRem(60);
-		min-height: 100svh;
 		display: flex;
-		place-items: center;
+		justify-content: center;
+		align-items: center;
+		min-height: calc(100svh - toRem(70));
 	}
 	// .page404__text
 	&__text {
-		font-size: toRem(90);
+		font-weight: 600;
+		color: var(--accent);
+		font-size: toRem(110);
 	}
 }
