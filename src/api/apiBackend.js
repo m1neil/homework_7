@@ -1,8 +1,8 @@
-const BASE_URL = 'https://ericalex-simple-backend.onrender.com/api/'
+const BASE_URL = 'https://localhost:7092/'
 
 export const apiBackend = {
-	shopList: `${BASE_URL}categories`,
+	shopList: `${BASE_URL}GetAllCategories`,
 	getProductsByCategory: category =>
-		`${BASE_URL}products/search?q=${encodeURIComponent(category)}`,
-	getProductById: id => `${BASE_URL}product/${id}`,
+		`${BASE_URL}GetProductByCategory/${encodeURIComponent(category)}`,
+	getProductById: id => `${BASE_URL}GetProductById/${id}`,
 }
